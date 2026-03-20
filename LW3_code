@@ -1,0 +1,98 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    //Task 1
+    int argN;
+    int result = 0;
+    
+    cout << "Enter the natural N number: ";
+    cin >> argN;
+    
+    int parA = argN / 100;
+    int parB = (argN / 10) % 10;
+    int parC = argN % 10;
+    
+    if (argN >= 100 && argN <= 999) {
+        if (parA % 2 != 0) {
+            result += 1;
+        }
+        if (parB % 2 != 0) {
+            result += 1;
+        }
+        if (parC % 2 != 0) {
+            result += 1;
+        }
+        else if (parA % 2 == 0 && parB % 2 == 0 && parC % 2 == 0) {
+            cout << "The entered number doesn't have any uneven numbers.\n";
+        }
+        cout << "The amount of uneven numbers: " << result;
+    }
+    else {
+        cout << "Error! This program only accepts numbers from 100 to 999";
+    }
+    
+    //Task 2
+    string lang;
+    
+    cout << "Enter the language you want the program to be in (en or ua): ";
+    cin >> lang;
+    
+    if (lang == "en" || lang == "ua") {
+        int monthNum;
+        
+        if (lang == "en") {
+            cout << "Enter the month value (1-12): ";
+            cin >> monthNum;
+            
+            if (monthNum >= 1 && monthNum <= 12) {
+                switch (monthNum) {
+                    case 1: cout << "January"; break;
+                    case 2: cout << "February"; break;
+                    case 3: cout << "March"; break;
+                    case 4: cout << "April"; break;
+                    case 5: cout << "May"; break;
+                    case 6: cout << "June"; break;
+                    case 7: cout << "July"; break;
+                    case 8: cout << "August"; break;
+                    case 9: cout << "September"; break;
+                    case 10: cout << "October"; break;
+                    case 11: cout << "November"; break;
+                    case 12: cout << "December"; break;
+                }
+            }
+            else {
+                cout << "Error! You must enter a valid month value.";
+            }
+        }
+        else {
+            cout << "Введіть значення місяця (1-12): ";
+            cin >> monthNum;
+            
+            if (monthNum >= 1 && monthNum <= 12) {
+                switch (monthNum) {
+                    case 1: cout << "Січень"; break;
+                    case 2: cout << "Лютий"; break;
+                    case 3: cout << "Березень"; break;
+                    case 4: cout << "Квітень"; break;
+                    case 5: cout << "Травень"; break;
+                    case 6: cout << "Червень"; break;
+                    case 7: cout << "Липень"; break;
+                    case 8: cout << "Серпень"; break;
+                    case 9: cout << "Вересень"; break;
+                    case 10: cout << "Жовтень"; break;
+                    case 11: cout << "Листопад"; break;
+                    case 12: cout << "Грудень"; break;
+                }
+            }
+            else {
+                cout << "Помилка! Ви повинні ввести допустиме значення місяця.";
+            }
+        }
+    }
+    else {
+        cout << "Error! This program only accepts a valid language.";
+    }
+}
